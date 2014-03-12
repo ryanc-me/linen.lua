@@ -25,7 +25,7 @@ if tostring(...) == "Channel" then
 		
 		changes = lurker.getchanged()	-- check for file changes
 
-		if changes then
+		if #changes > 0 then
 			-- wait for the channel to acknowledge that we've found a change
 			channel:supply(true)
 			changes = nil
