@@ -31,7 +31,7 @@ if tostring(...) == "Channel" then
 			changes = nil
 		end
 		
-		if type(channel:peek()) == "number" then
+		if type(type(channel:peek()) == "number") then
 			interval = channel:pop()
 		end
 		
