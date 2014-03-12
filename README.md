@@ -5,7 +5,7 @@ linen is a small plugin to enable multithreading with lurker. simply drop it in 
 
 
 ### Prerequisites
-you will need [lurker](github.com/rxi/lurker/ Lurker) and [lume](github.com/rxi/lume Lume) for linen to .
+you will need [lurker](github.com/rxi/lurker/ Lurker) and [lume](github.com/rxi/lume Lume) for linen to work.
 
 
 
