@@ -26,6 +26,8 @@ if tostring(...) == "Channel" then
 		changes = lurker.getchanged()	-- check for file changes
 
 		if #changes > 0 then
+			for _, file in pairs(changes) do lurker.resetfile(file) end
+			
 			-- wait for the channel to acknowledge that we've found a change
 			channel:supply(true)
 			changes = nil
@@ -73,8 +75,6 @@ else
 
   		-- check the thread for changes
 		if linen.channel:peek() == true then
-			linen.channel:pop()
-
 			-- run the hotswap code
 			local changed = lurker.scan()
 			if #changed > 0 and lurker.lasterrorfile then
@@ -82,6 +82,8 @@ else
 				lurker.lasterrorfile = nil
 				lurker.hotswapfile(f)
 			end
+			
+			linen.channel:pop()
 		end
 	end
 
