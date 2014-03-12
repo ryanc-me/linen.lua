@@ -30,6 +30,11 @@ if tostring(...) == "Channel" then
 			channel:supply(true)
 			changes = nil
 		end
+		
+		if type(channel:peek()) == "number" then
+			interval = channel:pop()
+		end
+		
 		sleep(interval)
 	end
 else
@@ -80,5 +85,11 @@ else
 		end
 	end
 
+	function linen.setInterval(i)
+		lurker.interval = i or lurker.interval
+
+		linen.channel:push(lurker.interval)
+	end
+	
 	return linen.init()
 end
