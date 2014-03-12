@@ -1,13 +1,13 @@
-local path_to_lume = "lume"
-local path_to_lurker = "lurker"
+local path_to_lume = "lume"	-- replace with absolute
+local path_to_lurker = "lurker" -- path to lume/lurker
 
 if tostring(...) == "Channel" then
 	-- thread block
 
 	require("love.timer")
 	require("love.filesystem")
-	local lume = require(path_to_lume)
-	local lurker = require(path_to_lurker)
+	lume = require(path_to_lume)
+	lurker = require(path_to_lurker)
 
 	local time = love.timer.getTime
 	local sleep = love.timer.sleep
@@ -31,7 +31,7 @@ if tostring(...) == "Channel" then
 			changes = nil
 		end
 		
-		if type(type(channel:peek()) == "number") then
+		if (type(channel:peek()) == "number") then
 			interval = channel:pop()
 		end
 		
